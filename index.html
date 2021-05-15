@@ -1,38 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <!-- Timeblocks go here -->
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>9 am</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text0" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn0" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
     </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>10 am</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text1" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn1" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>11 am</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text2" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn2" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>12 pm</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text3" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn3" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>1 pm</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text4" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn4" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>2 pm</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text5" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn5" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>3 pm</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text6" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn6" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>4 pm</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text7" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn7" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-1 border border-start-0 d-flex justify-content-center align-items-center">
+        <p>5 pm</p>
+      </div>
+      <div class="col-10 bg-light d-flex p-0">
+        <textarea id="text8" class="past w-100"></textarea>
+      </div>
+      <div class="col-1 text-light d-flex p-0 bl-0">
+        <button id="btn8" class="saveBtn w-100 rounded-end" type="button"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</body>
+
 </html>
