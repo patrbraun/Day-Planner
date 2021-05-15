@@ -1,3 +1,5 @@
+saveBtnEls = $('button');
+
 function setRowColors(){
     $('textArea').each(function(){
         $(this).css( "backgroundColor", "grey" );
@@ -9,8 +11,6 @@ function setRowColors(){
             var hour = $(this).attr("id").slice(4);
             var curDate = moment().format("YYYY-MM-DD HH");
             var rowDate = moment().format("YYYY-MM-DD") + " " + hour;
-            console.log(curDate);
-            console.log(rowDate);
             if(moment(rowDate).isAfter(curDate,'hour')){
                 $(this).css( "backgroundColor", "green" );
             }
@@ -21,4 +21,37 @@ function setRowColors(){
     },5000);
 }
 
+function saveData(){
+    var data;
+    if(localStorage.getItem('plannerData')){
+        data = JSON.parse(localStorage.getItem('plannerData'));
+    }
+    else{
+        data = [];
+    }
+
+    var hour = $(this).attr("id").slice(3);
+    console.log("Saving: " + hour);
+    var text = $('#text' + hour).val();
+    console.log(text);
+
+    var toSave = {
+        hour: hour,
+        text: text
+    }
+    console.log(toSave.hour);
+    var exists = data.findIndex((el) => el.hour == hour);
+    console.log(exists);
+    if(exists != -1){
+        data[exists] = toSave;
+    }
+    else{ 
+        data.push(toSave);
+    }
+
+
+    localStorage.setItem('plannerData', JSON.stringify(data));
+}
+
 setRowColors();
+saveBtnEls.on('click', saveData);
