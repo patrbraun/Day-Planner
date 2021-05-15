@@ -1,6 +1,7 @@
 saveBtnEls = $('button');
 
 function setRowColors(){
+    console.log("Setting Colors");
     //Sets all textAreas to grey
     $('textArea').each(function(){
         $(this).css( "backgroundColor", "grey" );
@@ -29,6 +30,7 @@ function setRowColors(){
 }
 
 function saveData(){
+    console.log("Saving Data");
     var data;
     //retrieves data from local storage
     if(localStorage.getItem('plannerData')){
@@ -61,8 +63,18 @@ function saveData(){
 }
 
 function loadData(){
-    //TODO
-    alert("loadData not implemented");
+    console.log("Loading Data");
+    //Get data from local storage
+    var data = JSON.parse(localStorage.getItem('plannerData'));
+    //If data exists
+    if(data){
+        //loads data from each element in the data array
+        data.forEach(function(rowData){
+            //Constructs text id from object hour
+            var textBoxId = "#text" + rowData.hour;
+            $(textBoxId).val(rowData.text);
+        });
+    }
 }
 
 setRowColors();
