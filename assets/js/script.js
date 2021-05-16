@@ -1,13 +1,13 @@
 saveBtnEls = $('button');
 
 function setRowColors(){
-    console.log("Setting Colors");
-    //Sets all textAreas to grey
-    $('textArea').each(function(){
-        $(this).css( "backgroundColor", "grey" );
-    });
-    
     setInterval(function(){
+        console.log("Setting Colors");
+        //Sets all textAreas to grey
+        $('textArea').each(function(){
+            $(this).css( "backgroundColor", "grey" );
+        });
+
         $('textArea').each(function(){
             //Each row id corresponds to the row's hour
             var hour = $(this).attr("id").slice(4);
@@ -26,7 +26,7 @@ function setRowColors(){
                 $(this).css( "backgroundColor", "red" );
             }
         });
-    },5000);
+    },1000);
 }
 
 function saveData(){
